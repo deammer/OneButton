@@ -46,9 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BackgroundScroller.cs" />
-     <Compile Include="Assets\OffsetScroller.cs" />
-     <Compile Include="Assets\PlayerController.cs" />
+     <Compile Include="Assets\PlatformMover.cs" />
+     <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
+     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\OffsetScroller.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\TileableTexture.cs" />
+     <Compile Include="Assets\Scripts\Utils\Calc.cs" />
+     <Compile Include="Assets\Scripts\Utils\Ease.cs" />
+     <Compile Include="Assets\Scripts\Utils\Ext.cs" />
+     <Compile Include="Assets\Scripts\Utils\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Utils\Tween.cs" />
+     <Compile Include="Assets\Scripts\ZOrderByHeight.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
