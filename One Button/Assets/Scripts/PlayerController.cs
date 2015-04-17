@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
 	private int animFlip = Animator.StringToHash("PlayerFlip");
 	private int animWallHang = Animator.StringToHash("PlayerWall");
 
+	// 
+	private float deathLimit;
+
 	void Start ()
 	{
 		layerPlatforms = LayerMask.NameToLayer("Platforms");
@@ -36,8 +39,10 @@ public class PlayerController : MonoBehaviour
 
 		animator = GetComponent<Animator>();
 		controller = GetComponent<CharacterController2D>();
+
+		deathLimit = GameManager.instance.RemoveZone.position.y;
 	}
-	
+
 	void Update ()
 	{
 		velocity = controller.velocity;
@@ -64,6 +69,13 @@ public class PlayerController : MonoBehaviour
 				animator.Play(animFall);
 			}
 			HandleAir();
+		}
+
+		// check for loss
+		if (transform.position.y < deathLimit)
+		{
+			// game over
+			Application.LoadLevel("GameOver");
 		}
 	}
 
