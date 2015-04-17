@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameOverMenu.cs" />
      <Compile Include="Assets\PlatformMover.cs" />
      <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\Scripts\Utils\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Utils\Tween.cs" />
      <Compile Include="Assets\Scripts\ZOrderByHeight.cs" />
+     <Compile Include="Assets\SetResolution.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
