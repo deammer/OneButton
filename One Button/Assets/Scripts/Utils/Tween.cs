@@ -3,6 +3,20 @@ using System.Collections;
 
 public static class Tween
 {
+	public static IEnumerator VarTween(this float value, float target, float duration, Easer ease)
+	{
+		float elapsed = 0;
+		float start = value;
+		while (elapsed < duration)
+		{
+			Debug.Log("value = " + value);
+			elapsed = Mathf.MoveTowards(elapsed, duration, Time.deltaTime);
+			value = start + (target - start) * ease(elapsed / duration);
+			yield return 0;
+		}
+		value = target;
+	}
+
 	public static IEnumerator MoveTo(this Transform transform, Vector3 target, float duration, Easer ease)
 	{
 		float elapsed = 0;

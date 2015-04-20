@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class TileableTexture : MonoBehaviour 
 {
 	public Vector2 InitialScale;
