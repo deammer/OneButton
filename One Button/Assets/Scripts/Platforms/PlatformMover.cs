@@ -15,10 +15,11 @@ public class PlatformMover : MonoBehaviour
 	void Update ()
 	{
 		Vector3 position = transform.position;
-		if (position.y < removeY)
-			position.y = spawnY;
-		
+
 		position.y -= Time.deltaTime * GameManager.instance.PlatformSpeed;
 		transform.position = position;
+
+		if (position.y < removeY)
+			Destroy(gameObject);
 	}
 }

@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager instance = null;
 
-	[RangeAttribute(0f,2f)]
+	[RangeAttribute(0f,20f)]
 	public float PlatformSpeed = .5f;
 	private float currentPlatformSpeed;
 
@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 	public int CoinsPickedUp = 0;
 	[HideInInspector]
 	public float HeightReached = 0f;
+
+	private PlatformSpawner spawner;
 
 	private bool gameStarted = false;
 
@@ -31,6 +33,9 @@ public class GameManager : MonoBehaviour
 		// round up the children
 		SpawnZone = transform.Find("SpawnZone");
 		RemoveZone = transform.Find("RemoveZone");
+
+		// cache the spawner
+		spawner = transform.Find("PlatformSpawner").GetComponent<PlatformSpawner>();
 	}
 
 	void Start()
@@ -42,6 +47,8 @@ public class GameManager : MonoBehaviour
 
 		currentPlatformSpeed = PlatformSpeed;
 		PlatformSpeed = 0;
+
+		spawner.Disable();
 	}
 
 	IEnumerator BeginGame()
@@ -55,6 +62,9 @@ public class GameManager : MonoBehaviour
 			yield return 0;
 		}
 		PlatformSpeed = currentPlatformSpeed;
+
+		// enable spawning
+		spawner.Enable();
 	}
 
 	void Update()

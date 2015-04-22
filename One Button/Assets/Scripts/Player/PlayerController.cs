@@ -3,12 +3,17 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+	public Transform DustParticle;
+
 	private States state = States.Ground;
 	private enum States {Ground, Air, Wall};
 
-	public int JumpForce = 15;
+	[Range(2f, 20f)]
+	public float JumpForce = 1f;
+	[Range(2f, 10f)]
+	public float GroundSpeed = 1f;
+	[Range(10f, 100f)]
 	public int Gravity = 12;
-	public int GroundSpeed = 60;
 
 	private CharacterController2D controller;
 	private PlatformMover platform;
@@ -32,6 +37,8 @@ public class PlayerController : MonoBehaviour
 	// 
 	private float deathLimit;
 
+	public bool Frozen = false;
+
 	void Start ()
 	{
 		layerPlatforms = LayerMask.NameToLayer("Platforms");
@@ -45,6 +52,8 @@ public class PlayerController : MonoBehaviour
 
 	void Update ()
 	{
+		if (Frozen) return;
+
 		velocity = controller.velocity;
 
 		// check ground
@@ -84,7 +93,7 @@ public class PlayerController : MonoBehaviour
 		transform.Translate(0, -Time.deltaTime * GameManager.instance.PlatformSpeed, 0);
 
 		velocity.y = 0;
-		velocity.x = direction * Time.deltaTime * GroundSpeed;
+		velocity.x = direction * GroundSpeed;
 
 		if ((velocity.x > 0 && CheckWallRight()) || (velocity.x < 0 && CheckWallLeft()))
 		{
@@ -139,7 +148,7 @@ public class PlayerController : MonoBehaviour
 			// flip the direction so we can jump the other way
 			Flip();
 
-			velocity.x = Time.deltaTime * direction * GroundSpeed;
+			velocity.x = direction * GroundSpeed;
 			Jump();
 		}
 		
@@ -185,6 +194,11 @@ public class PlayerController : MonoBehaviour
 
 		if (raycastHit)
 			platform = raycastHit.collider.gameObject.GetComponent<PlatformMover>();
+
+		Transform dust = Instantiate(DustParticle);
+		Vector3 position = transform.position;
+		position.y -= 1f;
+		dust.position = position;
 	}
 
 	private void Flip()
