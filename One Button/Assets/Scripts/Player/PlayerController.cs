@@ -46,8 +46,10 @@ public class PlayerController : MonoBehaviour
 
 		animator = GetComponent<Animator>();
 		controller = GetComponent<CharacterController2D>();
-
+		controller.onControllerCollidedEvent += OnControllerCollider;
 		deathLimit = GameManager.instance.RemoveZone.position.y;
+
+		state = States.Air;
 	}
 
 	void Update ()
@@ -90,7 +92,11 @@ public class PlayerController : MonoBehaviour
 
 	void HandleGround()
 	{
-		transform.Translate(0, -Time.deltaTime * GameManager.instance.PlatformSpeed, 0);
+		// stay on the platform
+		Vector3 location = transform.position;
+		location.y = platform.transform.position.y + 1.25f;
+		transform.position = location;
+		//transform.Translate(0, -Time.deltaTime * GameManager.instance.PlatformSpeed, 0);
 
 		velocity.y = 0;
 		velocity.x = direction * GroundSpeed;
@@ -171,6 +177,17 @@ public class PlayerController : MonoBehaviour
 		animator.Play(animFall);
 	}
 
+	private void OnControllerCollider(RaycastHit2D hit)
+	{
+		// ground collision
+		if (hit.normal.y == 1f)
+		{
+			// find a platform to land on
+			if (hit.collider.gameObject.GetComponent<PlatformMover>() != null)
+				platform = hit.collider.gameObject.GetComponent<PlatformMover>();
+		}
+	}
+
 	private void Land()
 	{
 		// change the state
@@ -182,22 +199,10 @@ public class PlayerController : MonoBehaviour
 		// animate
 		animator.Play(animWalk);
 
-		// save the platform we landed on
-		var rayDistance = .2f;//velocity.y * Time.deltaTime;
-		var rayDirection = -Vector2.up;
-		var initialRayOrigin = new Vector3(transform.position.x, transform.position.y - controller.boxCollider.size.y * .5f); // bottom
-		
-		var ray = new Vector2(initialRayOrigin.x, initialRayOrigin.y);
-		
-		Debug.DrawRay(ray, rayDirection * rayDistance, Color.blue);
-		var raycastHit = Physics2D.Raycast(ray, rayDirection, rayDistance, 1 << layerPlatforms.value);
-
-		if (raycastHit)
-			platform = raycastHit.collider.gameObject.GetComponent<PlatformMover>();
-
+		// add some dust
 		Transform dust = Instantiate(DustParticle);
 		Vector3 position = transform.position;
-		position.y -= 1f;
+		position.y -= .6f;
 		dust.position = position;
 	}
 
