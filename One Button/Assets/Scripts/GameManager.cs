@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 	public float HeightReached = 0f;
 
 	private PlatformSpawner spawner;
+	private TrapSpawner trapSpawner;
 
 	private bool gameStarted = false;
 
@@ -34,7 +35,8 @@ public class GameManager : MonoBehaviour
 		SpawnZone = transform.Find("SpawnZone");
 		RemoveZone = transform.Find("RemoveZone");
 
-		// cache the spawner
+		// cache the spawners
+		trapSpawner = transform.Find("TrapSpawner").GetComponent<TrapSpawner>();
 		spawner = transform.Find("PlatformSpawner").GetComponent<PlatformSpawner>();
 	}
 
@@ -49,6 +51,34 @@ public class GameManager : MonoBehaviour
 		PlatformSpeed = 0;
 
 		spawner.Disable();
+		trapSpawner.Disable();
+	}
+
+	public void GameOver()
+	{
+		PlayerController.instance.gameObject.SetActive(false);
+		trapSpawner.Disable();
+		spawner.Disable();
+		StartCoroutine(TweenToGameOver());
+	}
+
+	IEnumerator TweenToGameOver()
+	{
+		float duration = 3f;
+		float tweenDuration = 1f;
+		float elapsed = 0;
+		currentPlatformSpeed = PlatformSpeed;
+
+		while (elapsed < duration)
+		{
+			elapsed += Time.deltaTime;
+
+			PlatformSpeed = Mathf.Lerp(currentPlatformSpeed, 0, elapsed / tweenDuration);
+
+			yield return 0;
+		}
+
+		Application.LoadLevel("GameOver");
 	}
 
 	IEnumerator BeginGame()
@@ -65,6 +95,7 @@ public class GameManager : MonoBehaviour
 
 		// enable spawning
 		spawner.Enable();
+		trapSpawner.Enable();
 	}
 
 	void Update()

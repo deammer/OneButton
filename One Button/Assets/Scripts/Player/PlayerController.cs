@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+	public static PlayerController instance;
+
 	public Transform DustParticle;
 
 	private States state = States.Ground;
@@ -38,6 +40,14 @@ public class PlayerController : MonoBehaviour
 	private float deathLimit;
 
 	public bool Frozen = false;
+
+	void Awake()
+	{
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy(gameObject);
+	}
 
 	void Start ()
 	{

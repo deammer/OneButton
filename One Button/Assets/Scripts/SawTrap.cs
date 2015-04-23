@@ -10,8 +10,16 @@ public class SawTrap : MonoBehaviour {
 		if (other.gameObject.tag == "Player")
 		{
 			Transform blood = Instantiate(BloodParticles);
+			if (transform.localScale.x == -1f)
+			{
+				Vector3 rotation = transform.localEulerAngles;
+				rotation.y = 270;
+				blood.localEulerAngles = rotation;
+			}
+
 			blood.position = transform.position;
-			Destroy(gameObject);
+
+			GameManager.instance.GameOver();
 		}
 	}
 }

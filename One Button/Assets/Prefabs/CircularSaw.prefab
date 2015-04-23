@@ -12,6 +12,7 @@ GameObject:
   - 95: {fileID: 9550236}
   - 58: {fileID: 5863202}
   - 114: {fileID: 11449454}
+  - 114: {fileID: 11452630}
   m_Layer: 11
   m_Name: CircularSaw
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.44000006, y: 7.38000011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +73,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077a149be76427f4bbbbca3aec58d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BloodParticles: {fileID: 495422, guid: 4d3e92e852dc34444916c42228b643b1, type: 2}
+  BloodParticles: {fileID: 441042, guid: 4d3e92e852dc34444916c42228b643b1, type: 2}
+--- !u!114 &11452630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a5eb2610bd06042a05fd0aac86df0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21210286
 SpriteRenderer:
   m_ObjectHideFlags: 1
