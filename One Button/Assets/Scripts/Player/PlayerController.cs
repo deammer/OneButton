@@ -102,11 +102,13 @@ public class PlayerController : MonoBehaviour
 
 	void HandleGround()
 	{
-		// stay on the platform
-		Vector3 location = transform.position;
-		location.y = platform.transform.position.y + 1.25f;
-		transform.position = location;
-		//transform.Translate(0, -Time.deltaTime * GameManager.instance.PlatformSpeed, 0);
+		if (platform != null)
+		{
+			// stay on the platform
+			Vector3 location = transform.position;
+			location.y = platform.transform.position.y + 1.25f;
+			transform.position = location;
+		}
 
 		velocity.y = 0;
 		velocity.x = direction * GroundSpeed;

@@ -557,6 +557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59a9dbff714ee74dbabddf9fd29098c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CoinsDisplay: {fileID: 1385997446}
+  HeightDisplay: {fileID: 2069681724}
 --- !u!4 &1964772646
 Transform:
   m_ObjectHideFlags: 0

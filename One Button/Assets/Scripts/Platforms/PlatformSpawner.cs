@@ -14,8 +14,9 @@ public class PlatformSpawner : MonoBehaviour {
 	private float left;
 	private float right;
 
-	public float SpawnPeriod = 1f;
-	private float delay;
+	public int SpawnDistance = 3;
+	private Transform lastPlatformSpawned;
+	private float spawnY;
 
 	void Start ()
 	{
@@ -23,27 +24,30 @@ public class PlatformSpawner : MonoBehaviour {
 
 		left = LeftBoundary.position.x;
 		right = RightBoundary.position.x;
+
+		spawnY = GameManager.instance.SpawnZone.position.y;
+
+		SpawnPlatform();
 	}
-	
+
 	void Update ()
 	{
-		delay -= Time.deltaTime;
+		float distanceFromLastPlatform = Mathf.Abs(lastPlatformSpawned.position.y - spawnY);
 
-		if (delay <= 0)
-		{
+		if (distanceFromLastPlatform >= SpawnDistance)
 			SpawnPlatform();
-			delay += SpawnPeriod;
-		}
 	}
 
 	private void SpawnPlatform()
 	{
 		Transform platform = Instantiate(platforms[Random.Range(0, platforms.Length)]);
 		float halfWidth = platform.GetComponent<BoxCollider2D>().size.x * .5f;
-		Vector3 position = new Vector3(Random.Range(left + halfWidth, right - halfWidth), GameManager.instance.SpawnZone.position.y);
+		Vector3 position = new Vector3(Random.Range(left + halfWidth, right - halfWidth), spawnY);
 
 		platform.position = position;
 		platform.SetParent(transform);
+
+		lastPlatformSpawned = platform;
 	}
 
 	public void Enable() { enabled = true; }

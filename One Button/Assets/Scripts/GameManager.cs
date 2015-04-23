@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
 
 	public void CoinCollected()
 	{
+		CoinsPickedUp ++;
+		
 		if (!gameStarted)
 		{
 			gameStarted = true;

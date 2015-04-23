@@ -5,28 +5,29 @@ public class TrapSpawner : MonoBehaviour
 {
 	public Transform [] Traps;
 
-	public float SpawnPeriod = 3.5f;
-
-	private float delay = 0;
+	public int SpawnSpacing = 10;
+	private Transform lastTrapSpawned;
+	private float spawnY;
 
 	void Start ()
 	{
+		spawnY = GameManager.instance.SpawnZone.position.y;
+
 		if (Traps.Length == 0)
 		{
 			Debug.LogError("Can't spawn any traps.");
 			gameObject.SetActive(false);
 		}
+
+		SpawnTrap();
 	}
 	
 	void Update ()
 	{
-		delay -= Time.deltaTime;
+		float distanceFromLastSpawn = Mathf.Abs(lastTrapSpawned.position.y - spawnY);
 		
-		if (delay <= 0)
-		{
+		if (distanceFromLastSpawn >= SpawnSpacing)
 			SpawnTrap();
-			delay += SpawnPeriod;
-		}
 	}
 
 	private void SpawnTrap()
@@ -39,13 +40,20 @@ public class TrapSpawner : MonoBehaviour
 		// set the location
 		Vector3 location = trap.position;
 		location.x *= side;
-		location.y = GameManager.instance.SpawnZone.position.y;
+		if (lastTrapSpawned == null)
+			location.y = spawnY;
+		else
+			location.y = lastTrapSpawned.position.y + SpawnSpacing;
 		trap.position = location;
+
+		// todo: check collision with platforms
 
 		// set the scale
 		Vector3 scale = trap.localScale;
 		scale.x *= side;
 		trap.localScale = scale;
+
+		lastTrapSpawned = trap;
 	}
 
 	public void Enable() { enabled = true; }

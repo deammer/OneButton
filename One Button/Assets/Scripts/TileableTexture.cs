@@ -18,6 +18,6 @@ public class TileableTexture : MonoBehaviour
 
 	void Update () 
 	{
-		rend.material.mainTextureScale = new Vector2(transform.lossyScale.x/InitialScale.x,transform.lossyScale.y/InitialScale.y);
+		rend.sharedMaterial.mainTextureScale = new Vector2(transform.lossyScale.x/InitialScale.x,transform.lossyScale.y/InitialScale.y);
 	}
 }
