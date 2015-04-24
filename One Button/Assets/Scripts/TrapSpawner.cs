@@ -6,28 +6,27 @@ public class TrapSpawner : MonoBehaviour
 	public Transform [] Traps;
 
 	public int SpawnSpacing = 10;
-	private Transform lastTrapSpawned;
-	private float spawnY;
+	private float distanceSinceSpawn;
 
 	void Start ()
 	{
-		spawnY = GameManager.instance.SpawnZone.position.y;
-
 		if (Traps.Length == 0)
 		{
 			Debug.LogError("Can't spawn any traps.");
 			gameObject.SetActive(false);
 		}
 
-		SpawnTrap();
+		distanceSinceSpawn = 0;
 	}
 	
 	void Update ()
 	{
-		float distanceFromLastSpawn = Mathf.Abs(lastTrapSpawned.position.y - spawnY);
-		
-		if (distanceFromLastSpawn >= SpawnSpacing)
+		distanceSinceSpawn += Time.deltaTime * GameManager.instance.PlatformSpeed;
+		if (distanceSinceSpawn >= SpawnSpacing)
+		{
 			SpawnTrap();
+			distanceSinceSpawn -= SpawnSpacing;
+		}
 	}
 
 	private void SpawnTrap()
@@ -40,13 +39,12 @@ public class TrapSpawner : MonoBehaviour
 		// set the location
 		Vector3 location = trap.position;
 		location.x *= side;
-		if (lastTrapSpawned == null)
-			location.y = spawnY;
-		else
-			location.y = lastTrapSpawned.position.y + SpawnSpacing;
-		trap.position = location;
+		location.y = GameManager.instance.SpawnZone.position.y;
 
-		// todo: check collision with platforms
+		// don't spawn on platforms (TODO: improve this so we can spawn on the same y but not the same x?)
+		while (Mathf.Abs(location.y - PlatformSpawner.instance.LatestPlatform.position.y) < 1.5f)
+			location.y += 1f;
+		trap.position = location;
 
 		// set the rotation (we're not scaling to x = -1, because we wanna keep the particles in the correct spot)
 		Vector3 angle = trap.localEulerAngles;
@@ -56,8 +54,6 @@ public class TrapSpawner : MonoBehaviour
 			trap.localEulerAngles = angle;
 			trap.GetComponent<Trap>().Flipped = true;
 		}
-
-		lastTrapSpawned = trap;
 	}
 
 	public void Enable() { enabled = true; }

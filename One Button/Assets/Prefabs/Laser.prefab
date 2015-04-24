@@ -191,8 +191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Flipped: 0
-  ChargeDuration: .800000012
-  ShootDuration: .5
+  ChargeDuration: 1.20000005
+  ShootDuration: .800000012
+  DeathEffect: {fileID: 440760, guid: b6ffa5a51bd0ee84cb06f7e39c4bcff5, type: 2}
 --- !u!114 &11416234
 MonoBehaviour:
   m_ObjectHideFlags: 1

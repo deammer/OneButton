@@ -14,7 +14,6 @@ public class SawTrap : Trap
 			{
 				Vector3 rotation = blood.transform.localEulerAngles;
 				rotation.y = 270;
-				Debug.Log("flipping particles");
 				blood.localEulerAngles = rotation;
 			}
 

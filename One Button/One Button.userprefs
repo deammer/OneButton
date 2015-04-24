@@ -1,14 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TrapSpawner.cs">
     <Files>
-      <File FileName="Assets\Scripts\LaserTrap.cs" Line="70" Column="19" />
-      <File FileName="Assets\Scripts\Player\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="85" Column="3" />
-      <File FileName="Assets\Scripts\TrapSpawner.cs" Line="57" Column="45" />
-      <File FileName="Assets\Scripts\TileableTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameOverMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SawTrap.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\SpawnZone.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OffsetScroller.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TrapSpawner.cs" Line="19" Column="26" />
+      <File FileName="Assets\Scripts\Platforms\PlatformSpawner.cs" Line="22" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -6,6 +6,8 @@ public class LaserTrap : Trap
 	public float ChargeDuration = .8f;
 	public float ShootDuration = .5f;
 
+	public Transform DeathEffect;
+
 	private ParticleSystem chargeEmitter;
 	private ParticleSystem shootEmitter;
 	private LaserBeam beam;
@@ -45,6 +47,9 @@ public class LaserTrap : Trap
 
 		if (other.gameObject.tag == "Player")
 		{
+			if (DeathEffect)
+				Instantiate(DeathEffect, PlayerController.instance.transform.position, Quaternion.identity);
+
 			GameManager.instance.GameOver();
 		}
 	}
