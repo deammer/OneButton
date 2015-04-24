@@ -48,10 +48,14 @@ public class TrapSpawner : MonoBehaviour
 
 		// todo: check collision with platforms
 
-		// set the scale
-		Vector3 scale = trap.localScale;
-		scale.x *= side;
-		trap.localScale = scale;
+		// set the rotation (we're not scaling to x = -1, because we wanna keep the particles in the correct spot)
+		Vector3 angle = trap.localEulerAngles;
+		if (side == -1)
+		{
+			angle.y += 180;
+			trap.localEulerAngles = angle;
+			trap.GetComponent<Trap>().Flipped = true;
+		}
 
 		lastTrapSpawned = trap;
 	}

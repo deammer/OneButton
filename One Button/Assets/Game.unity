@@ -597,6 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Traps:
   - {fileID: 496378, guid: 35ab2372309319246b63e04168377fcc, type: 2}
+  - {fileID: 418208, guid: 7363a67792e05574c95d0aec56e4f8c9, type: 2}
   SpawnSpacing: 10
 --- !u!1 &1161666896
 GameObject:

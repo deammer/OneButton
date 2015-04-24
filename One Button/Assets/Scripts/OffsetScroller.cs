@@ -18,7 +18,8 @@ public class OffsetScroller : MonoBehaviour {
 	
 	void Update ()
 	{
-		float y = Mathf.Repeat (Time.time * ScrollSpeedRatio * GameManager.instance.PlatformSpeed * textureOffset, 1f);
+		float currentOffset = _renderer.sharedMaterial.GetTextureOffset("_MainTex").y;
+		float y = Mathf.Repeat (currentOffset + Time.deltaTime * ScrollSpeedRatio * GameManager.instance.PlatformSpeed * textureOffset, 1f);
 		Vector2 offset = new Vector2 (savedOffset.x, y);
 		_renderer.sharedMaterial.SetTextureOffset ("_MainTex", offset);
 	}

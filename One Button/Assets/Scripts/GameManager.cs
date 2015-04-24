@@ -84,11 +84,10 @@ public class GameManager : MonoBehaviour
 	IEnumerator BeginGame()
 	{
 		float elapsed = 0;
-		float start = PlatformSpeed;
 		while (elapsed < 1.5f)
 		{
 			elapsed = Mathf.MoveTowards(elapsed, 1.5f, Time.deltaTime);
-			PlatformSpeed = start + (currentPlatformSpeed - start) * (elapsed / 1.5f);
+			PlatformSpeed = Mathf.Lerp(0, currentPlatformSpeed, elapsed / 1.5f);
 			yield return 0;
 		}
 		PlatformSpeed = currentPlatformSpeed;

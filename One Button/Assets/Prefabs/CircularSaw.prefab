@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077a149be76427f4bbbbca3aec58d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Flipped: 0
   BloodParticles: {fileID: 441042, guid: 4d3e92e852dc34444916c42228b643b1, type: 2}
 --- !u!114 &11452630
 MonoBehaviour:
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1638758735
+  m_SortingLayerID: 1284024007
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5cdc4c5eb8196bb4a8103a5ef61af868, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

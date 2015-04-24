@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SawTrap : MonoBehaviour {
-
+public class SawTrap : Trap
+{
 	public Transform BloodParticles;
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -10,10 +10,11 @@ public class SawTrap : MonoBehaviour {
 		if (other.gameObject.tag == "Player")
 		{
 			Transform blood = Instantiate(BloodParticles);
-			if (transform.localScale.x == -1f)
+			if (Flipped)
 			{
-				Vector3 rotation = transform.localEulerAngles;
+				Vector3 rotation = blood.transform.localEulerAngles;
 				rotation.y = 270;
+				Debug.Log("flipping particles");
 				blood.localEulerAngles = rotation;
 			}
 
