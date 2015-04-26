@@ -6,8 +6,12 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance = null;
 
 	[RangeAttribute(0f,20f)]
-	public float PlatformSpeed = .5f;
+	public float NormalPlatformSpeed = 2f;
+	public float PlatformSpeedMod = 1.5f;
+	public float PlatformSpeed { get { return NormalPlatformSpeed * heightMod; } }
 	private float currentPlatformSpeed;
+	private float heightMod = 1f;
+	private float distanceFromCenterToTop;
 
 	[HideInInspector]
 	public Transform SpawnZone;
@@ -47,11 +51,20 @@ public class GameManager : MonoBehaviour
 		HeightReached = 0f;
 		gameStarted = false;
 
-		currentPlatformSpeed = PlatformSpeed;
-		PlatformSpeed = 0;
+		currentPlatformSpeed = NormalPlatformSpeed;
+		NormalPlatformSpeed = 0;
+
+		distanceFromCenterToTop = transform.Find("CameraTop").position.y;
 
 		spawner.Disable();
 		trapSpawner.Disable();
+	}
+
+	void Update()
+	{
+		heightMod = Mathf.Max(1f, 1f + PlayerController.instance.transform.position.y / distanceFromCenterToTop);
+
+		HeightReached += Time.deltaTime;
 	}
 
 	public void GameOver()
@@ -67,13 +80,13 @@ public class GameManager : MonoBehaviour
 		float duration = 3f;
 		float tweenDuration = 1f;
 		float elapsed = 0;
-		currentPlatformSpeed = PlatformSpeed;
+		currentPlatformSpeed = NormalPlatformSpeed;
 
 		while (elapsed < duration)
 		{
 			elapsed += Time.deltaTime;
 
-			PlatformSpeed = Mathf.Lerp(currentPlatformSpeed, 0, elapsed / tweenDuration);
+			NormalPlatformSpeed = Mathf.Lerp(currentPlatformSpeed, 0, elapsed / tweenDuration);
 
 			yield return 0;
 		}
@@ -87,19 +100,14 @@ public class GameManager : MonoBehaviour
 		while (elapsed < 1.5f)
 		{
 			elapsed = Mathf.MoveTowards(elapsed, 1.5f, Time.deltaTime);
-			PlatformSpeed = Mathf.Lerp(0, currentPlatformSpeed, elapsed / 1.5f);
+			NormalPlatformSpeed = Mathf.Lerp(0, currentPlatformSpeed, elapsed / 1.5f);
 			yield return 0;
 		}
-		PlatformSpeed = currentPlatformSpeed;
+		NormalPlatformSpeed = currentPlatformSpeed;
 
 		// enable spawning
 		spawner.Enable();
 		trapSpawner.Enable();
-	}
-
-	void Update()
-	{
-		HeightReached += Time.deltaTime;
 	}
 
 	public void CoinCollected()
