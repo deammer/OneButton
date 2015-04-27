@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
 	private PlatformSpawner spawner;
 	private TrapSpawner trapSpawner;
+	private Transform trapIndicator;
 
 	private bool gameStarted = false;
 
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
 		// round up the children
 		SpawnZone = transform.Find("SpawnZone");
 		RemoveZone = transform.Find("RemoveZone");
+		trapIndicator = transform.Find("TrapIndicator");
 
 		// cache the spawners
 		trapSpawner = transform.Find("TrapSpawner").GetComponent<TrapSpawner>();
@@ -58,6 +60,8 @@ public class GameManager : MonoBehaviour
 
 		spawner.Disable();
 		trapSpawner.Disable();
+
+		trapIndicator.gameObject.SetActive(false);
 	}
 
 	void Update()
@@ -119,5 +123,27 @@ public class GameManager : MonoBehaviour
 			gameStarted = true;
 			StartCoroutine(BeginGame());
 		}
+	}
+
+	public void ShowTrapIndicator(Transform trap)
+	{
+		trapIndicator.gameObject.SetActive(true);
+		trapIndicator.SetX(trap.position.x);
+
+		StopCoroutine(HideTrapIndicator());
+
+		trapIndicator.localScale = new Vector3(.5f, .5f, 1f);
+		StartCoroutine(trapIndicator.ScaleTo (new Vector3(1f, 1f, 1f), 1.0f, Ease.ElasticOut));
+
+		StartCoroutine(HideTrapIndicator());
+	}
+
+	private IEnumerator HideTrapIndicator()
+	{
+		yield return new WaitForSeconds(1.2f);
+
+		StartCoroutine(trapIndicator.ScaleTo(new Vector3(0, 0, 1f), .5f, Ease.ElasticIn));
+		yield return new WaitForSeconds(.5f);
+		trapIndicator.gameObject.SetActive(false);
 	}
 }

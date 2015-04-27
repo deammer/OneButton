@@ -54,6 +54,8 @@ public class TrapSpawner : MonoBehaviour
 			trap.localEulerAngles = angle;
 			trap.GetComponent<Trap>().Flipped = true;
 		}
+
+		GameManager.instance.ShowTrapIndicator(trap);
 	}
 
 	public void Enable() { enabled = true; }
