@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 	private float currentPlatformSpeed;
 	private float heightMod = 1f;
 	private float distanceFromCenterToTop;
+	private const float heightSpeedMod = 2f;
 
 	[HideInInspector]
 	public Transform SpawnZone;
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
 
 	void Update()
 	{
-		heightMod = Mathf.Max(1f, 1f + PlayerController.instance.transform.position.y / distanceFromCenterToTop);
+		heightMod = Mathf.Max(1f, 1f + PlayerController.instance.transform.position.y / distanceFromCenterToTop * heightSpeedMod);
 
 		HeightReached += Time.deltaTime;
 	}
