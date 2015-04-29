@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\LaserTrap.cs" />
      <Compile Include="Assets\Scripts\OffsetScroller.cs" />
      <Compile Include="Assets\Scripts\PauseManager.cs" />
+     <Compile Include="Assets\Scripts\PlatformTiling.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformMover.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformSpawner.cs" />
      <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
