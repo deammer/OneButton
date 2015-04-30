@@ -59,6 +59,22 @@ public class PlatformSpawner : MonoBehaviour
 		platform.SetParent(transform);
 
 		lastPlatformSpawned = platform;
+
+		// spawn coins
+		int numCoins = Random.Range(0, (int)3);
+		int width = (int)(halfWidth * 2f);
+		int amount = Random.Range(0, width);
+
+		if (amount == 0) return;
+
+		position.x -= (amount - 1) / width;
+		position.y += 1f; // spawn above the platform
+
+		for (int i = 0; i < amount; i++)
+		{
+			position.x = platform.position.x - halfWidth + (float)i * (float)width / (float)amount + (float)width / (float)amount * .5f;
+			Instantiate(Coin, position, Quaternion.identity);
+		}
 	}
 
 	public void Enable() { enabled = true; }
