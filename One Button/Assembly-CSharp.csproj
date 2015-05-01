@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BouncyText.cs" />
      <Compile Include="Assets\MobileInput\Scripts\CrossPlatformInputManager.cs" />
      <Compile Include="Assets\MobileInput\Scripts\PlatformSpecific\MobileInput.cs" />
      <Compile Include="Assets\MobileInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\Scripts\Items\CoinPickup.cs" />
      <Compile Include="Assets\Scripts\LaserBeam.cs" />
      <Compile Include="Assets\Scripts\LaserTrap.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\OffsetScroller.cs" />
      <Compile Include="Assets\Scripts\PauseManager.cs" />
      <Compile Include="Assets\Scripts\PlatformTiling.cs" />
@@ -67,6 +69,7 @@
      <Compile Include="Assets\Scripts\SawTrap.cs" />
      <Compile Include="Assets\Scripts\SpawnZone.cs" />
      <Compile Include="Assets\Scripts\SpritePivotAlignment.cs" />
+     <Compile Include="Assets\Scripts\TextGradient.cs" />
      <Compile Include="Assets\Scripts\TileableTexture.cs" />
      <Compile Include="Assets\Scripts\Trap.cs" />
      <Compile Include="Assets\Scripts\TrapSpawner.cs" />
