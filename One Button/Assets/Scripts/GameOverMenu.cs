@@ -9,8 +9,11 @@ public class GameOverMenu : MonoBehaviour
 
 	void Start()
 	{
-		CoinsDisplay.text = "Coins collected: " + GameManager.instance.CoinsPickedUp;
-		HeightDisplay.text = "Height reached: " + GameManager.instance.HeightReached.ToString("F2");
+		if (GameManager.instance != null)
+		{
+			CoinsDisplay.text = "Coins collected: " + GameManager.instance.CoinsPickedUp;
+			HeightDisplay.text = "Height reached: " + GameManager.instance.HeightReached.ToString("F2");
+		}
 	}
 
 	void Update ()

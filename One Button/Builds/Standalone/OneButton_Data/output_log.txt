@@ -1,0 +1,39 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: ATI Radeon HD 5450 (ID=0x68f9)
+    Vendor:   ATI
+    VRAM:     492 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.049 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 3000x1920 at 0,0
+<RI> Initialized touch support.
+Platform assembly: C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\mpreaux.ISTATION.COM\Documents\GitHub\OneButton\One Button\Builds\Standalone\OneButton_Data\Managed\System.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.979914 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 451.
+Total: 0.241677 ms (FindLiveObjects: 0.018539 ms CreateObjectMapping: 0.018870 ms MarkObjects: 0.195328 ms  DeleteObjects: 0.008607 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.702850 ms
+
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 327.
+Total: 0.296634 ms (FindLiveObjects: 0.015891 ms CreateObjectMapping: 0.015228 ms MarkObjects: 0.189038 ms  DeleteObjects: 0.076144 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.668898 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 453.
+Total: 0.254919 ms (FindLiveObjects: 0.025160 ms CreateObjectMapping: 0.015891 ms MarkObjects: 0.209233 ms  DeleteObjects: 0.003972 ms)
+

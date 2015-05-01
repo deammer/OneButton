@@ -389,8 +389,8 @@ Canvas:
   m_GameObject: {fileID: 1147002474}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 101169634}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -408,6 +408,7 @@ GameObject:
   - 224: {fileID: 1278949873}
   - 222: {fileID: 1278949875}
   - 114: {fileID: 1278949874}
+  - 114: {fileID: 1278949876}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -457,13 +458,29 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tap to restart
+  m_Text: Retry
 --- !u!222 &1278949875
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1278949872}
+--- !u!114 &1278949876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1278949872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef92ea9327e4ca346bed90dda17ff250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
+  AmountX: .200000003
+  AmountY: .100000001
+  MaxAngle: 6
+  RotationSpeed: 5
 --- !u!1 &1385997444
 GameObject:
   m_ObjectHideFlags: 0
