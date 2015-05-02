@@ -313,8 +313,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .16911763, g: .16911763, b: .16911763, a: 1}
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -454,10 +454,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1186269426}
   m_RootOrder: 2
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -163}
-  m_SizeDelta: {x: 340, y: 150}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 83}
+  m_SizeDelta: {x: 340, y: 133}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1584602232
 MonoBehaviour:
@@ -478,13 +478,13 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 30
+    m_MaxSize: 100
     m_Alignment: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Instructions:
+  m_Text: 'How to play:
 
     jump a lot
 
@@ -526,10 +526,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1186269426}
   m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 56}
-  m_SizeDelta: {x: 340, y: 60}
+  m_AnchorMin: {x: 0, y: .5}
+  m_AnchorMax: {x: 1, y: .5}
+  m_AnchoredPosition: {x: -7.15260001e-07, y: 103}
+  m_SizeDelta: {x: -96, y: 60}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1882689168
 MonoBehaviour:
@@ -550,7 +550,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 60
+    m_MaxSize: 120
     m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -658,10 +658,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1186269426}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: 0, y: -44}
-  m_SizeDelta: {x: -112, y: 68}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -17.5}
+  m_SizeDelta: {x: -40, y: -545}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2078369971
 MonoBehaviour:
