@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SawTrap.cs" />
+     <Compile Include="Assets\Scripts\SetAspectRatio.cs" />
      <Compile Include="Assets\Scripts\SpawnZone.cs" />
      <Compile Include="Assets\Scripts\SpritePivotAlignment.cs" />
      <Compile Include="Assets\Scripts\TextGradient.cs" />
@@ -79,7 +80,6 @@
      <Compile Include="Assets\Scripts\Utils\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Utils\Tween.cs" />
      <Compile Include="Assets\Scripts\ZOrderByHeight.cs" />
-     <Compile Include="Assets\SetAspectRatio.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

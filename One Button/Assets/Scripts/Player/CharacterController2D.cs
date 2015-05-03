@@ -173,6 +173,7 @@ public class CharacterController2D : MonoBehaviour
 	/// horizontally and vertically so that we can send the events after all collision state is set
 	/// </summary>
 	private List<RaycastHit2D> _raycastHitsThisFrame = new List<RaycastHit2D>( 2 );
+	public List<RaycastHit2D> RaycastHitsThisFrame { get { return _raycastHitsThisFrame; } }
 	
 	// horizontal/vertical movement data
 	private float _verticalDistanceBetweenRays;

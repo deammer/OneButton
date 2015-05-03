@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 406106}
   - 212: {fileID: 21218976}
-  - 61: {fileID: 6134478}
   - 114: {fileID: 11464312}
+  - 68: {fileID: 6813924}
   m_Layer: 9
   m_Name: Platform7
   m_TagString: Untagged
@@ -30,19 +30,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6134478
-BoxCollider2D:
+--- !u!68 &6813924
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181554}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 7, y: 1}
+  m_Offset: {x: 0, y: .5}
+  m_Points:
+  - {x: -3.5, y: 0}
+  - {x: 3.5, y: 0}
 --- !u!114 &11464312
 MonoBehaviour:
   m_ObjectHideFlags: 1

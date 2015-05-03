@@ -280,6 +280,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 181554, guid: 8911b3173a3eee043908a57315cba83a, type: 2}
+      propertyPath: m_Name
+      value: BasePlatform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8911b3173a3eee043908a57315cba83a, type: 2}
   m_IsPrefabParent: 0
@@ -534,6 +538,10 @@ Prefab:
     - target: {fileID: 433364, guid: 085eacf2b9580f44f8c654337a7ed53e, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195386, guid: 085eacf2b9580f44f8c654337a7ed53e, type: 2}
+      propertyPath: m_Name
+      value: FirstPlatform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 085eacf2b9580f44f8c654337a7ed53e, type: 2}
@@ -1038,11 +1046,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 475518, guid: 15e07261720cf9242a47ea08187d6895, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 475518, guid: 15e07261720cf9242a47ea08187d6895, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.280000001
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 475518, guid: 15e07261720cf9242a47ea08187d6895, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1192,7 +1200,7 @@ Transform:
   m_GameObject: {fileID: 1742471072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 7.86000013}
-  m_LocalScale: {x: 16, y: 24, z: 1}
+  m_LocalScale: {x: 24, y: 24, z: 1}
   m_Children: []
   m_Father: {fileID: 1161666897}
   m_RootOrder: 0
@@ -1328,7 +1336,7 @@ Transform:
   m_GameObject: {fileID: 2105809194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 16, y: 24, z: 1}
+  m_LocalScale: {x: 24, y: 24, z: 1}
   m_Children: []
   m_Father: {fileID: 1161666897}
   m_RootOrder: 1

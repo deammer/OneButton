@@ -52,7 +52,8 @@ public class PlatformSpawner : MonoBehaviour
 	private void SpawnPlatform()
 	{
 		Transform platform = Instantiate(platforms[Random.Range(0, platforms.Length)]);
-		float halfWidth = platform.GetComponent<BoxCollider2D>().size.x * .5f;
+		EdgeCollider2D collider = platform.GetComponent<EdgeCollider2D>();
+		float halfWidth = Mathf.Abs(collider.points[0].x - collider.points[1].x) * .5f;
 		Vector3 position = new Vector3(Random.Range(left + halfWidth, right - halfWidth), GameManager.instance.SpawnZone.position.y);
 
 		platform.position = position;

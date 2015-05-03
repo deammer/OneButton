@@ -1,18 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SetAspectRatio.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerController.cs">
     <Files>
-      <File FileName="Assets\SetAspectRatio.cs" Line="11" Column="60" />
-      <File FileName="Assets\Scripts\Platforms\PlatformSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlatformTiling.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platforms\PlatformMover.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnZone.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\OffsetScroller.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TrapSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LaserBeam.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TextGradient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerController.cs" Line="78" Column="12" />
+      <File FileName="Assets\Scripts\Player\CharacterController2D.cs" Line="176" Column="90" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
 		animator = GetComponent<Animator>();
 		controller = GetComponent<CharacterController2D>();
-		controller.onControllerCollidedEvent += OnControllerCollider;
+		controller.onControllerCollidedEvent += OnControllerCollider; // called AFTER move()
 		deathLimit = GameManager.instance.RemoveZone.position.y;
 
 		state = States.Air;
