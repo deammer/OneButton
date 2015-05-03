@@ -18,10 +18,9 @@ public class GameManager : MonoBehaviour
 	public Transform SpawnZone;
 	[HideInInspector]
 	public Transform RemoveZone;
-	[HideInInspector]
-	public int CoinsPickedUp = 0;
-	[HideInInspector]
-	public float HeightReached = 0f;
+
+	public static int CoinsPickedUp = 0;
+	public static float HeightReached = 0f;
 
 	private PlatformSpawner spawner;
 	private TrapSpawner trapSpawner;

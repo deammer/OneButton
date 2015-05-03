@@ -1262,8 +1262,6 @@ MonoBehaviour:
   PlatformSpeedMod: 1.5
   SpawnZone: {fileID: 0}
   RemoveZone: {fileID: 0}
-  CoinsPickedUp: 0
-  HeightReached: 0
 --- !u!4 &1785774667
 Transform:
   m_ObjectHideFlags: 0

@@ -14,8 +14,10 @@ public class PlayerController : MonoBehaviour
 	public float JumpForce = 1f;
 	[Range(2f, 10f)]
 	public float GroundSpeed = 1f;
-	[Range(10f, 100f)]
+	[Range(10f, 150f)]
 	public int Gravity = 12;
+	[Range(0f, 1f)]
+	public float AirControlRatio = .7f;
 
 	private CharacterController2D controller;
 	private PlatformMover platform;
@@ -139,7 +141,10 @@ public class PlayerController : MonoBehaviour
 		else
 		{
 			//velocity.x = direction * Time.deltaTime * GroundSpeed;
-			velocity.y -= Gravity * Time.deltaTime;
+			if (Input.anyKey)
+				velocity.y -= Gravity * Time.deltaTime * AirControlRatio;
+			else
+				velocity.y -= Gravity * Time.deltaTime;
 		}
 
 		controller.move(velocity * Time.deltaTime);

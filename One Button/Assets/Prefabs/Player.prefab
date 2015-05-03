@@ -139,7 +139,8 @@ MonoBehaviour:
   DustParticle: {fileID: 465618, guid: a7393aa669011aa40b20d72c522ef967, type: 2}
   JumpForce: 4
   GroundSpeed: 6
-  Gravity: 100
+  Gravity: 150
+  AirControlRatio: .699999988
   Frozen: 0
 --- !u!212 &21247190
 SpriteRenderer:

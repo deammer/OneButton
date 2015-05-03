@@ -10,10 +10,12 @@ public class BouncyText : MonoBehaviour
 	public float MaxAngle = 10f;
 	public float RotationSpeed = 5f;
 
+	private Vector3 originalAngle;
 	private float timer;
 
 	void Start()
 	{
+		originalAngle = transform.localEulerAngles;
 		timer = Random.Range(0, 2f * Mathf.PI);
 	}
 	
@@ -29,8 +31,8 @@ public class BouncyText : MonoBehaviour
 		scale.y = 1f + Mathf.Cos (timer * Speed) * AmountY;
 		transform.localScale = scale;
 
-		Vector3 rotation = transform.localEulerAngles;
-		rotation.z = Mathf.Sin(timer * RotationSpeed) * MaxAngle;
+		Vector3 rotation = originalAngle;
+		rotation.z += Mathf.Sin(timer * RotationSpeed) * MaxAngle;
 		transform.localEulerAngles = rotation;
 	}
 }
