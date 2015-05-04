@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour
 {
 	public static PlayerController instance;
 
-	public Transform DustParticle;
+	public Transform LandingDustParticle;
+	public Transform WallDustParticle;
 
 	private States state = States.Ground;
 	private enum States {Ground, Air, Wall};
@@ -60,6 +61,11 @@ public class PlayerController : MonoBehaviour
 		controller = GetComponent<CharacterController2D>();
 		controller.onControllerCollidedEvent += OnControllerCollider; // called AFTER move()
 		deathLimit = GameManager.instance.RemoveZone.position.y;
+
+		WallDustParticle = Instantiate(WallDustParticle);
+		WallDustParticle.parent = transform;
+		WallDustParticle.localPosition = new Vector3(0, 0, -1);
+		WallDustParticle.gameObject.SetActive(false);
 
 		state = States.Air;
 	}
@@ -161,6 +167,9 @@ public class PlayerController : MonoBehaviour
 		// reset speed
 		velocity.x = 0;
 		velocity.y = 0;
+
+		// start particles
+		//WallDustParticle.gameObject.SetActive(true);
 	}
 
 	void HandleWallSlide()
@@ -172,6 +181,10 @@ public class PlayerController : MonoBehaviour
 			Flip();
 
 			velocity.x = direction * GroundSpeed;
+
+			// stop the particles
+			//WallDustParticle.gameObject.SetActive(false);
+
 			Jump();
 		}
 		
@@ -216,8 +229,11 @@ public class PlayerController : MonoBehaviour
 		// animate
 		animator.Play(animWalk);
 
+		// stop the wall particles, if necessary
+		//WallDustParticle.gameObject.SetActive(false);
+
 		// add some dust
-		Transform dust = Instantiate(DustParticle);
+		Transform dust = Instantiate(LandingDustParticle);
 		Vector3 position = transform.position;
 		position.y -= .6f;
 		dust.position = position;
