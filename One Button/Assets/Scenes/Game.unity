@@ -633,6 +633,7 @@ MonoBehaviour:
   Traps:
   - {fileID: 496378, guid: 35ab2372309319246b63e04168377fcc, type: 2}
   - {fileID: 418208, guid: 7363a67792e05574c95d0aec56e4f8c9, type: 2}
+  - {fileID: 445076, guid: 173a590ea02a1b943a4f3d7f974a8ac0, type: 2}
   SpawnSpacing: 10
 --- !u!1 &1161666896
 GameObject:
@@ -705,6 +706,10 @@ Prefab:
     - target: {fileID: 460572, guid: 9e581af479e112848bb026ec3a2909dd, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466310, guid: 9e581af479e112848bb026ec3a2909dd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .289999992
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e581af479e112848bb026ec3a2909dd, type: 2}

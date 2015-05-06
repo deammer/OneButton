@@ -53,6 +53,9 @@ TagManager:
   - name: Items
     uniqueID: 1638758735
     locked: 0
+  - name: ParticlesBehindPlayer
+    uniqueID: 348721907
+    locked: 0
   - name: Player
     uniqueID: 137241867
     locked: 0

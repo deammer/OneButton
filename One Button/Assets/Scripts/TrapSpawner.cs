@@ -33,27 +33,43 @@ public class TrapSpawner : MonoBehaviour
 	{
 		Transform trap = Instantiate(Traps[Random.Range(0, Traps.Length)]);
 		trap.SetParent(transform);
-
-		int side = Random.Range(0, 1f) > .5f ? 1 : -1;
-
-		// set the location
+		trap.name = trap.name.Substring(0, trap.name.Length - 7); // remove "(Clone)"
 		Vector3 location = trap.position;
-		location.x *= side;
-		location.y = GameManager.instance.SpawnZone.position.y;
-
-		// don't spawn on platforms (TODO: improve this so we can spawn on the same y but not the same x?)
-		while (Mathf.Abs(location.y - PlatformSpawner.instance.LatestPlatform.position.y) < 1.5f)
-			location.y += 1f;
+		
+		switch (trap.name)
+		{
+		case "Spikes":
+			location.x = PlatformSpawner.instance.LastPlatformSpawned.position.x;
+			location.y = PlatformSpawner.instance.LastPlatformSpawned.position.y + 1;
+			break;
+		case "CircularSaw":
+		case "Laser":
+			int side = Random.Range(0, 1f) > .5f ? 1 : -1;
+			
+			// set the location
+			location.x *= side;
+			location.y = GameManager.instance.SpawnZone.position.y;
+			
+			// don't spawn on platforms (TODO: improve this so we can spawn on the same y but not the same x?)
+			while (Mathf.Abs(location.y - PlatformSpawner.instance.LastPlatformSpawned.position.y) < 1.5f)
+				location.y += 1f;
+			
+			// set the rotation (we're not scaling to x = -1, because we wanna keep the particles in the correct spot)
+			Vector3 angle = trap.localEulerAngles;
+			if (side == -1)
+			{
+				angle.y += 180;
+				trap.localEulerAngles = angle;
+				trap.GetComponent<Trap>().Flipped = true;
+			}
+			break;
+		default:
+			Debug.LogError("Invalid trap name in SpawnTrap(): " + trap.name);
+			break;
+		}
+		
 		trap.position = location;
 
-		// set the rotation (we're not scaling to x = -1, because we wanna keep the particles in the correct spot)
-		Vector3 angle = trap.localEulerAngles;
-		if (side == -1)
-		{
-			angle.y += 180;
-			trap.localEulerAngles = angle;
-			trap.GetComponent<Trap>().Flipped = true;
-		}
 
 		GameManager.instance.ShowTrapIndicator(trap);
 	}

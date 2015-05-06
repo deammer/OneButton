@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\SawTrap.cs" />
      <Compile Include="Assets\Scripts\SetAspectRatio.cs" />
      <Compile Include="Assets\Scripts\SpawnZone.cs" />
+     <Compile Include="Assets\Scripts\SpikeTrap.cs" />
      <Compile Include="Assets\Scripts\SpritePivotAlignment.cs" />
      <Compile Include="Assets\Scripts\TextGradient.cs" />
      <Compile Include="Assets\Scripts\TileableTexture.cs" />

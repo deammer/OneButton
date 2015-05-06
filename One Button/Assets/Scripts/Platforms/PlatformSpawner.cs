@@ -19,8 +19,7 @@ public class PlatformSpawner : MonoBehaviour
 	private float right;
 
 	public int SpawnDistance = 3;
-	private Transform lastPlatformSpawned;
-	public Transform LatestPlatform { get { return lastPlatformSpawned; } }
+	public Transform LastPlatformSpawned { get; private set; }
 	private float spawnY;
 
 	void Awake()
@@ -43,7 +42,7 @@ public class PlatformSpawner : MonoBehaviour
 
 	void Update ()
 	{
-		float distanceFromLastPlatform = Mathf.Abs(lastPlatformSpawned.position.y - spawnY);
+		float distanceFromLastPlatform = Mathf.Abs(LastPlatformSpawned.position.y - spawnY);
 
 		if (distanceFromLastPlatform >= SpawnDistance)
 			SpawnPlatform();
@@ -59,7 +58,7 @@ public class PlatformSpawner : MonoBehaviour
 		platform.position = position;
 		platform.SetParent(transform);
 
-		lastPlatformSpawned = platform;
+		LastPlatformSpawned = platform;
 
 		// spawn coins
 		int numCoins = Random.Range(0, (int)3);
