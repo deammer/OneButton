@@ -39,8 +39,11 @@ public class TrapSpawner : MonoBehaviour
 		switch (trap.name)
 		{
 		case "Spikes":
-			location.x = PlatformSpawner.instance.LastPlatformSpawned.position.x;
-			location.y = PlatformSpawner.instance.LastPlatformSpawned.position.y + 1;
+			trap.SetParent(PlatformSpawner.instance.LastPlatformSpawned, false);
+			location = new Vector3(0, 1, 0);
+
+			trap.position = new Vector3(0, 0, 0);
+			trap.localPosition = location;
 			break;
 		case "CircularSaw":
 		case "Laser":
@@ -62,13 +65,13 @@ public class TrapSpawner : MonoBehaviour
 				trap.localEulerAngles = angle;
 				trap.GetComponent<Trap>().Flipped = true;
 			}
+
+			trap.position = location;
 			break;
 		default:
 			Debug.LogError("Invalid trap name in SpawnTrap(): " + trap.name);
 			break;
 		}
-		
-		trap.position = location;
 
 
 		GameManager.instance.ShowTrapIndicator(trap);

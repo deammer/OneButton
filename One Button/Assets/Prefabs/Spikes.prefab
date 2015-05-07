@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 445076}
   - 212: {fileID: 21206260}
   - 61: {fileID: 6149088}
-  - 114: {fileID: 11413794}
   - 114: {fileID: 11405236}
   m_Layer: 11
   m_Name: Spikes
@@ -55,17 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1576d3ebfc0852c4d8c2c0b133950545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11413794
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a5eb2610bd06042a05fd0aac86df0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Flipped: 0
 --- !u!212 &21206260
 SpriteRenderer:
   m_ObjectHideFlags: 1
