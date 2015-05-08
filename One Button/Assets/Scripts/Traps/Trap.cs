@@ -4,5 +4,6 @@ using UnityEditor;
 
 public class Trap : MonoBehaviour
 {
+	[HideInInspector]
 	public bool Flipped = false;
 }

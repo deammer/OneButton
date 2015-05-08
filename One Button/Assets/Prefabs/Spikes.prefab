@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Flipped: 0
+  Gibs: {fileID: 408382, guid: ce22ad04e49dee14f83e22c287d33edc, type: 2}
 --- !u!212 &21206260
 SpriteRenderer:
   m_ObjectHideFlags: 1

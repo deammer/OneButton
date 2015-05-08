@@ -286,4 +286,6 @@ public class PlayerController : MonoBehaviour
 			return true;
 		return false;
 	}
+
+	public Vector2 Velocity { get { return new Vector2 (controller.velocity.x, controller.velocity.y); } }
 }
