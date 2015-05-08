@@ -35,6 +35,9 @@ public class PlatformSpawner : MonoBehaviour
 		left = LeftBoundary.position.x;
 		right = RightBoundary.position.x;
 
+		var temp = right - left;
+		Debug.Log("right - left = " + temp);
+
 		spawnY = GameManager.instance.SpawnZone.position.y;
 
 		SpawnPlatform();
@@ -53,7 +56,10 @@ public class PlatformSpawner : MonoBehaviour
 		Transform platform = Instantiate(platforms[Random.Range(0, platforms.Length)]);
 		EdgeCollider2D collider = platform.GetComponent<EdgeCollider2D>();
 		float halfWidth = Mathf.Abs(collider.points[0].x - collider.points[1].x) * .5f;
-		Vector3 position = new Vector3(Random.Range(left + halfWidth, right - halfWidth), GameManager.instance.SpawnZone.position.y);
+
+		// keep the x whole
+		float x = left + halfWidth + Random.Range(0, (int)Mathf.Floor(right - left - halfWidth * 2));
+		Vector3 position = new Vector3(x, GameManager.instance.SpawnZone.position.y);
 
 		platform.position = position;
 		platform.SetParent(transform);
@@ -73,7 +79,8 @@ public class PlatformSpawner : MonoBehaviour
 		for (int i = 0; i < amount; i++)
 		{
 			position.x = platform.position.x - halfWidth + (float)i * (float)width / (float)amount + (float)width / (float)amount * .5f;
-			Instantiate(Coin, position, Quaternion.identity);
+			Transform coin = Instantiate(Coin, position, Quaternion.identity) as Transform;
+			coin.SetParent(platform);
 		}
 	}
 
