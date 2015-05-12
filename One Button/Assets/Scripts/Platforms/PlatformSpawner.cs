@@ -35,9 +35,6 @@ public class PlatformSpawner : MonoBehaviour
 		left = LeftBoundary.position.x;
 		right = RightBoundary.position.x;
 
-		var temp = right - left;
-		Debug.Log("right - left = " + temp);
-
 		spawnY = GameManager.instance.SpawnZone.position.y;
 
 		SpawnPlatform();

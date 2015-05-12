@@ -141,6 +141,10 @@ public class PlayerController : MonoBehaviour
 
 	void HandleAir()
 	{
+		// move down with platforms
+		var y = transform.position.y - Time.deltaTime * GameManager.instance.PlatformSpeed;
+		transform.SetY(y);
+
 		if ((velocity.x > 0 && CheckWallRight()) || (velocity.x < 0 && CheckWallLeft()))
 		{
 			// start wall-sliding (will reset the velocity)
@@ -177,6 +181,10 @@ public class PlayerController : MonoBehaviour
 
 	void HandleWallSlide()
 	{
+		// move down with platforms
+		var y = transform.position.y - Time.deltaTime * GameManager.instance.PlatformSpeed;
+		transform.SetY(y);
+
 		// jump off the wall
 		if (Input.anyKeyDown)
 		{

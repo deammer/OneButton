@@ -34,6 +34,8 @@ public class SpikeTrap : Trap
 					gibs.localPosition = new Vector3(0, 0, 0);
 				}
 
+				GetComponent<Animator>().Play(Animator.StringToHash("SpikesDead"));
+
 				triggeredGameOver = true;
 				GameManager.instance.GameOver();
 			}
