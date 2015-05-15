@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: c4e8bb031e853be409db645b11acdcea
-timeCreated: 1431536356
+guid: 5752691fa70558d4fb609bcc20c5916a
+timeCreated: 1431536201
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: blocker_trap_0
-    21300002: blocker_trap_1
+    21300000: blocker_button_0
+    21300002: blocker_button_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -29,7 +29,7 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 256
+  maxTextureSize: 128
   textureSettings:
     filterMode: 0
     aniso: 16
@@ -51,25 +51,25 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: blocker_trap_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 128
-        height: 32
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: blocker_trap_1
+    - name: blocker_button_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 72
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blocker_button_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
