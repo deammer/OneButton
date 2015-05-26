@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: c4e8bb031e853be409db645b11acdcea
-timeCreated: 1431536356
+timeCreated: 1432605712
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: blocker_trap_0
     21300002: blocker_trap_1
+    21300004: blocker_trap_2
+    21300006: blocker_trap_3
+    21300008: blocker_trap_4
+    21300010: blocker_trap_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,9 +59,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 103
         width: 128
-        height: 32
+        height: 20
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -65,9 +69,49 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 72
-        height: 32
+        y: 8
+        width: 58
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blocker_trap_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 69
+        width: 128
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blocker_trap_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 58
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blocker_trap_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 39
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blocker_trap_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 7
+        width: 7
+        height: 18
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
