@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class BlockerButton : MonoBehaviour
 {
 	public Transform Blocker;
+    public UnityEvent callOnActivate;
 
 	private bool hasBeenActivated = false;
 
@@ -16,6 +18,11 @@ public class BlockerButton : MonoBehaviour
 			GetComponent<Animator>().SetBool("IsPressed", true);
 			Blocker.GetComponent<BlockerTrap>().Open();
 			hasBeenActivated = true;
+
+            if (callOnActivate != null)
+            {
+                callOnActivate.Invoke();
+            }
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -67,7 +68,8 @@ public class PlayerController : MonoBehaviour
 		width = GetComponent<BoxCollider2D>().size.x;
 
 		wallDustParticle = transform.Find("WallDustEmitter").GetComponent<ParticleSystem>();
-		wallDustParticle.enableEmission = false;
+        var emission = wallDustParticle.emission;
+        emission.enabled = false;
 
 		state = States.Air;
 	}
@@ -106,7 +108,7 @@ public class PlayerController : MonoBehaviour
 		if (transform.position.y < deathLimit)
 		{
 			// game over
-			Application.LoadLevel("GameOver");
+            SceneManager.LoadScene("GameOver");
 		}
 	}
 
@@ -175,8 +177,11 @@ public class PlayerController : MonoBehaviour
 		velocity.y = 0;
 
 		// start particles
-		wallDustParticle.enableEmission = true;
-		wallDustParticle.startSpeed = -GameManager.instance.PlatformSpeed;
+        var emission = wallDustParticle.emission;
+        emission.enabled = true;
+
+        var main = wallDustParticle.main;
+        main.startSpeed = -GameManager.instance.PlatformSpeed;
 	}
 
 	void HandleWallSlide()
@@ -193,10 +198,11 @@ public class PlayerController : MonoBehaviour
 
 			velocity.x = direction * GroundSpeed;
 
-			// stop the particles
-			wallDustParticle.enableEmission = false;
+            // stop the particles
+            var emission = wallDustParticle.emission;
+            emission.enabled = false;
 
-			Jump();
+            Jump();
 		}
 		
 		velocity.y -= Gravity * Time.deltaTime * .3f;
@@ -240,9 +246,12 @@ public class PlayerController : MonoBehaviour
 		// animate
 		animator.Play(animWalk);
 
-		// stop the wall particles, if necessary
-		if (wallDustParticle.isPlaying)
-			wallDustParticle.enableEmission = false;
+        // stop the wall particles, if necessary
+        if (wallDustParticle.isPlaying)
+        {
+            var emission = wallDustParticle.emission;
+            emission.enabled = false;
+        }
 
 		// add some dust
 		Transform dust = Instantiate(LandingDustParticle);

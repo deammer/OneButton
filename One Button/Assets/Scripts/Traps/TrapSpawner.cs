@@ -39,6 +39,7 @@ public class TrapSpawner : MonoBehaviour
 		switch (trap.name)
 		{
 		case "Spikes":
+        case "Turtle":
 			trap.SetParent(PlatformSpawner.instance.LastPlatformSpawned, false);
 			location = new Vector3(0, 1, 0);
 

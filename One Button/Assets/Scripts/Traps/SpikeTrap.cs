@@ -12,10 +12,14 @@ public class SpikeTrap : Trap
 	{
 		Transform platform = transform.parent;
 
-		// remove any coins on that platform
-		foreach (Transform child in platform)
-			if (child != transform)
-				GameObject.Destroy(child.gameObject);
+        // remove any coins on that platform
+        foreach (Transform child in platform)
+        {
+            if (child != transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
 	}
 
 	void Update()

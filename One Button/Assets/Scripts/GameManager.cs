@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -95,10 +96,10 @@ public class GameManager : MonoBehaviour
 			yield return 0;
 		}
 
-		Application.LoadLevel("GameOver");
+        SceneManager.LoadScene("GameOver");
 	}
 
-	IEnumerator BeginGame()
+	IEnumerator _BeginGame()
 	{
 		float elapsed = 0;
 		while (elapsed < 1.5f)
@@ -114,15 +115,18 @@ public class GameManager : MonoBehaviour
 		trapSpawner.Enable();
 	}
 
+    public void BeginGame()
+    {
+        if (!gameStarted)
+        {
+            gameStarted = true;
+            StartCoroutine(_BeginGame());
+        }
+    }
+
 	public void CoinCollected()
 	{
 		CoinsPickedUp ++;
-		
-		if (!gameStarted)
-		{
-			gameStarted = true;
-			StartCoroutine(BeginGame());
-		}
 	}
 
 	public void ShowTrapIndicator(Transform trap)
