@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 0
-  bundleIdentifier: com.MaximePreaux.OneButton
+  bundleIdentifier: com.FishbowlGames.OneButton
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
@@ -197,10 +197,10 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
-  AndroidTVCompatibility: 1
-  AndroidIsGame: 1
+  AndroidKeystoreName: user_keystore.keystore
+  AndroidKeyaliasName: testing
+  AndroidTVCompatibility: 0
+  AndroidIsGame: 0
   androidEnableBanner: 1
   m_AndroidBanners:
   - width: 320

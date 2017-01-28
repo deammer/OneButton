@@ -50,6 +50,7 @@
      <Compile Include="Assets\BlockerTrap.cs" />
      <Compile Include="Assets\EnemyWander.cs" />
      <Compile Include="Assets\ExplosionForce.cs" />
+     <Compile Include="Assets\GameMenuManager.cs" />
      <Compile Include="Assets\MobileInput\Scripts\CrossPlatformInputManager.cs" />
      <Compile Include="Assets\MobileInput\Scripts\PlatformSpecific\MobileInput.cs" />
      <Compile Include="Assets\MobileInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
